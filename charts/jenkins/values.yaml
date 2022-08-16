@@ -19,18 +19,16 @@ jenkins:
       - ssh-slaves:latest
       - timestamper:latest
       - ws-cleanup:latest
+      - github:latest
     JCasC:
       configScripts:
-        demo: |
-          jenkins:
-            test: this shit
-        welcome-message: |
-          jenkins:
-            systemMessage: Welcome to our CI\CD server.
         bootstrap-job: |
           jobs:
             - script: >
                 pipelineJob("Seed or update all pipelines") {
+                  triggers {
+                    githubPush()
+                  }
                   definition {
                     cpsScm {
                       scm {
