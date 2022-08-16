@@ -1,0 +1,47 @@
+jenkins:
+  controller:
+    additionalPlugins: 
+      - ant:latest
+      - antisamy-markup-formatter:latest
+      - authorize-project:latest
+      - build-timeout:latest
+      - cloudbees-folder:latest
+      - credentials:latest
+      - email-ext:latest
+      - gradle:latest
+      - job-dsl:latest
+      - ldap:latest
+      - mailer:latest
+      - matrix-auth:latest
+      - nodejs:latest
+      - pam-auth:latest
+      - pipeline-stage-view:latest
+      - ssh-slaves:latest
+      - timestamper:latest
+      - ws-cleanup:latest
+    JCasC:
+      configScripts:
+        demo: |
+          jenkins:
+            test: this shit
+        welcome-message: |
+          jenkins:
+            systemMessage: Welcome to our CI\CD server.
+        bootstrap-job: |
+          jobs:
+            - script: >
+                pipelineJob("Seed or update all pipelines") {
+                  definition {
+                    cpsScm {
+                      scm {
+                        git{
+                          remote {
+                            url("https://github.com/hin22001/jenkins-pipeline.git")
+                          }
+                          branch("*/main")
+                        }
+                      }
+                    }
+                  }
+                }
+        
