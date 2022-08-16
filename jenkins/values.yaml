@@ -21,6 +21,9 @@ jenkins:
       - ws-cleanup:latest
     JCasC:
       configScripts:
+        demo: |
+          jenkins:
+            test: this shit
         welcome-message: |
           jenkins:
             systemMessage: Welcome to our CI\CD server.
