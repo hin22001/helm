@@ -46,6 +46,20 @@ entries:
   jenkins2:
   - apiVersion: v2
     appVersion: 1.16.0
+    created: "2022-08-16T03:19:29.097837995Z"
+    dependencies:
+    - name: jenkins
+      repository: https://charts.jenkins.io
+      version: x.x.x
+    description: A Helm chart for Kubernetes
+    digest: 42914b9600bce2c17d8d80980f2eae8947e3b7f91e178c323e897bbb504b02b3
+    name: jenkins2
+    type: application
+    urls:
+    - https://github.com/hin22001/helm/releases/download/jenkins2-0.1.3/jenkins2-0.1.3.tgz
+    version: 0.1.3
+  - apiVersion: v2
+    appVersion: 1.16.0
     created: "2022-08-16T03:14:51.990426912Z"
     dependencies:
     - name: jenkins
