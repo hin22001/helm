@@ -1,2 +1,3 @@
 Chart.lock
 .DS_Store
+charts/*/charts
