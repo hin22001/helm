@@ -3,6 +3,16 @@ entries:
   argocd-root-app:
   - apiVersion: v2
     appVersion: 1.16.0
+    created: "2022-09-07T09:37:05.357164721Z"
+    description: A Helm chart for Kubernetes
+    digest: 409c610192d355cbc7d9f0d2aba101d75acf60cf2e890e0bb4c209c5bd85908c
+    name: argocd-root-app
+    type: application
+    urls:
+    - https://github.com/hin22001/helm/releases/download/argocd-root-app-1.0.0/argocd-root-app-1.0.0.tgz
+    version: 1.0.0
+  - apiVersion: v2
+    appVersion: 1.16.0
     created: "2022-09-07T09:23:17.27156312Z"
     description: A Helm chart for Kubernetes
     digest: d80838e336365a3293bac12c82c66f1517670c7bf30dbaf16b7cfe40f5d26c94
