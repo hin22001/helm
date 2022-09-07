@@ -1,0 +1,43 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  # descirbe the name of the pod in k8s
+  name: root 
+  # descirbe the namespace of the pod in k8s
+  namespace: {{ .Values.namespace }}
+  finalizers:
+  - resources-finalizer.argocd.argoproj.io
+spec:
+  project: default # the project of the application belongs to
+  
+  # Reference to target k8s server and namespace
+  destination:
+    # describe the target namespace of the application
+    namespace: {{ .Values.namespace }}
+    # describe the URL of target cluster
+    server: https://kubernetes.default.svc
+
+  # Source of the application manifests
+  source: 
+    # the url of the repository which can be point to a git repo or helm repo
+    repoURL: {{ .Values.source.repoURL }}
+    # for git only, to specify the path under the git repo
+    path: {{ .Values.source.path }}
+    # the revision of the source to sync apps. 
+    # Git => commit, tag or branch
+    # Helm => Chart's version
+    targetRevision: {{ .Values.source.targetRevision }}
+  
+  # Controls when and how a sync will be performed
+  syncPolicy:
+    # Automated will keep an application synced to the target revision
+    automated: 
+      # Prune specifies whether to delete resources from the cluster which is not existed in the sources anymore as part of automated sync
+      prune: true
+      # AllowEmpty allows apps to have zero live resources
+      allowEmpty: true
+      # SelfHeal specifies whether to revert resources back to their desired state upon modification in the cluster
+      selfHeal: true
+
+    syncOptions:
+      - CreateNamespace=true
