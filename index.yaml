@@ -1,6 +1,31 @@
 apiVersion: v1
 entries:
+  argocd-root:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2022-09-07T09:22:49.583496942Z"
+    description: A Helm chart for Kubernetes
+    digest: 1e84ee22662e3c674fe02b7940ffc9dccfd141543b31fef6302b14da6d44a360
+    name: argocd-root
+    type: application
+    urls:
+    - https://github.com/hin22001/helm/releases/download/argocd-root-0.1.0/argocd-root-0.1.0.tgz
+    version: 0.1.0
   jenkins:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2022-09-07T09:22:49.908413026Z"
+    dependencies:
+    - name: jenkins
+      repository: https://charts.jenkins.io
+      version: x.x.x
+    description: A Helm chart for Kubernetes
+    digest: 36a7ba92354c286fe45c18da532d96d3b60f5335fc73445eeba7ab8f00eac382
+    name: jenkins
+    type: application
+    urls:
+    - https://github.com/hin22001/helm/releases/download/jenkins-0.1.4/jenkins-0.1.4.tgz
+    version: 0.1.4
   - apiVersion: v2
     appVersion: 1.16.0
     created: "2022-08-16T07:47:31.098939332Z"
