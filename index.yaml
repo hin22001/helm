@@ -21,6 +21,21 @@ entries:
     urls:
     - https://github.com/hin22001/helm/releases/download/argocd-root-app-0.1.0/argocd-root-app-0.1.0.tgz
     version: 0.1.0
+  ingress-controller:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2022-09-08T06:31:29.369150829Z"
+    dependencies:
+    - name: ingress-nginx
+      repository: https://kubernetes.github.io/ingress-nginx
+      version: x.x.x
+    description: A Helm chart for Kubernetes
+    digest: b328de229237d16eab173394f2abc340983709b876b3c4169aefd1610aef3ba7
+    name: ingress-controller
+    type: application
+    urls:
+    - https://github.com/hin22001/helm/releases/download/ingress-controller-0.1.0/ingress-controller-0.1.0.tgz
+    version: 0.1.0
   jenkins:
   - apiVersion: v2
     appVersion: 1.16.0
