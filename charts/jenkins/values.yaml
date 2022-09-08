@@ -1,5 +1,6 @@
 jenkins:
   controller:
+    jenkinsUriPrefix: jenkins
     additionalPlugins: 
       - ant:latest
       - antisamy-markup-formatter:latest
