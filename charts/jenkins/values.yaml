@@ -55,8 +55,7 @@ ingress:
     # kubernetes.io/ingress.class: nginx
     # kubernetes.io/tls-acme: "true"
   hosts:
-    - host: kubernetes.default.svc
-      paths:
+    - paths:
         - path: /jenkins
           pathType: Prefix
   tls: []
