@@ -48,12 +48,12 @@ jenkins:
             gitHubPluginConfig:
               configs:
                 - 
-                
+
 ingress:
   enabled: true
   className: "nginx"
   annotations: 
-    nginx.ingress.kubernetes.io/rewrite-target: /$2
+    nginx.ingress.kubernetes.io/rewrite-target: /jenkins/$2
   hosts:
     - host: ryant.internal
       paths:
