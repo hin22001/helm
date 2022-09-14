@@ -48,20 +48,18 @@ jenkins:
             gitHubPluginConfig:
               configs:
                 - 
+                
 ingress:
-  enabled: false
-  className: ""
+  enabled: true
+  className: "nginx"
   annotations: 
-    nginx.ingress.kubernetes.io/rewrite-target: /
-    # kubernetes.io/ingress.class: nginx
-    # kubernetes.io/tls-acme: "true"
+    nginx.ingress.kubernetes.io/rewrite-target: /$2
   hosts:
-    - paths:
-        - path: /jenkins
+    - host: ryant.internal
+      paths:
+        - path: /jenkins(/|$)(.*)
           pathType: Prefix
   tls: []
+
 service:
   port: 8080
-  #  - secretName: chart-example-tls
-  #    hosts:
-  #      - chart-example.local
