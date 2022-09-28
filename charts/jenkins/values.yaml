@@ -43,11 +43,11 @@ jenkins:
                     }
                   }
                 }
-        github-config: |
-          unclassified:
-            gitHubPluginConfig:
-              configs:
-                - 
+        # github-config: |
+        #   unclassified:
+        #     gitHubPluginConfig:
+        #       configs:
+        #         - 
 
 ingress:
   enabled: true
