@@ -40,7 +40,7 @@ metadata:
 type: Opaque
 data:
   admin-user: "YWRtaW4="
-  admin-password: "MjlXYlRkdnN6NFpSUFJINlNsM05wMnJNYUtkZUJCblJEcmNtRlhnMw=="
+  admin-password: "YlQ2VXI3T3FtMjlyZ2ZWMjd3VFI4a1B4d3NrUkZSZ0ptSmJ0NXVaQw=="
   ldap-toml: ""
 ---
 # Source: grafana/charts/grafana/templates/configmap.yaml
@@ -256,7 +256,7 @@ spec:
         checksum/config: d8a7afb281bb71e368460bbf87d9fd9423f340f4fa35790ea560c547a3ce5785
         checksum/dashboards-json-config: 01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b
         checksum/sc-dashboard-provider-config: 01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b
-        checksum/secret: 0170a64c364946d6949d8a3660ac44182cbc61aaf63ee59258e944269095de30
+        checksum/secret: 5d5e7e91ff69cd86dc29994755f5c9e7e3d62cfc39687ec877f69c1a3ef1980e
     spec:      
       serviceAccountName: release-name-grafana
       automountServiceAccountToken: true
@@ -315,6 +315,27 @@ spec:
             name: release-name-grafana
         - name: storage
           emptyDir: {}
+---
+# Source: grafana/templates/ingress.yaml
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: grafana
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /$2
+spec:
+  ingressClassName: nginx
+  rules:
+    - host: "ryant.internal"
+      http:
+        paths:
+          - path: /grafana(/|$)(.*)
+            pathType: Prefix
+            backend:
+              service:
+                name: grafana
+                port:
+                  number: 3000
 ---
 # Source: grafana/charts/grafana/templates/tests/test.yaml
 apiVersion: v1
