@@ -21,6 +21,21 @@ entries:
     urls:
     - https://github.com/hin22001/helm/releases/download/argocd-root-app-0.1.0/argocd-root-app-0.1.0.tgz
     version: 0.1.0
+  grafana:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2022-09-28T07:48:24.210277454Z"
+    dependencies:
+    - name: grafana
+      repository: https://grafana.github.io/helm-charts
+      version: x.x.x
+    description: A Helm chart for Kubernetes
+    digest: 613a0ac807ae9bacbf76028549dfc99d6d1a71767b76c5dacd917d81557e0a9e
+    name: grafana
+    type: application
+    urls:
+    - https://github.com/hin22001/helm/releases/download/grafana-0.1.0/grafana-0.1.0.tgz
+    version: 0.1.0
   ingress-controller:
   - apiVersion: v2
     appVersion: 1.16.0
