@@ -305,4 +305,19 @@ entries:
     urls:
     - https://github.com/hin22001/helm/releases/download/jenkins2-0.1.2/jenkins2-0.1.2.tgz
     version: 0.1.2
+  prometheus:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2022-09-29T07:21:48.469039197Z"
+    dependencies:
+    - name: prometheus
+      repository: https://prometheus-community.github.io/helm-charts
+      version: x.x.x
+    description: A Helm chart for Kubernetes
+    digest: abd41907db004803e5cd7d8f9c526fc8622fd0a61cc5dbbdf13113887c41454c
+    name: prometheus
+    type: application
+    urls:
+    - https://github.com/hin22001/helm/releases/download/prometheus-0.1.0/prometheus-0.1.0.tgz
+    version: 0.1.0
 generated: "2022-08-16T10:47:03.39461+08:00"
