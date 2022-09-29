@@ -24,6 +24,20 @@ entries:
   grafana:
   - apiVersion: v2
     appVersion: 1.16.0
+    created: "2022-09-29T04:01:07.755347006Z"
+    dependencies:
+    - name: grafana
+      repository: https://grafana.github.io/helm-charts
+      version: x.x.x
+    description: A Helm chart for Kubernetes
+    digest: 3f271099ce8eaaf057cd4b6fe46a013eb939105685572dd78794129f818d109f
+    name: grafana
+    type: application
+    urls:
+    - https://github.com/hin22001/helm/releases/download/grafana-0.1.3/grafana-0.1.3.tgz
+    version: 0.1.3
+  - apiVersion: v2
+    appVersion: 1.16.0
     created: "2022-09-29T03:39:09.544892273Z"
     dependencies:
     - name: grafana
