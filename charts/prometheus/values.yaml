@@ -9,3 +9,5 @@ prometheus:
     hosts:
       - ryant.internal
   prefixUrl: /prometheus
+  nodeExporter:
+    hostRootfs: false
