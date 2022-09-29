@@ -308,6 +308,20 @@ entries:
   prometheus:
   - apiVersion: v2
     appVersion: 1.16.0
+    created: "2022-09-29T07:45:25.289736036Z"
+    dependencies:
+    - name: prometheus
+      repository: https://prometheus-community.github.io/helm-charts
+      version: x.x.x
+    description: A Helm chart for Kubernetes
+    digest: dc046f44545a0d64f3fe6fc7affe365990ca119a1982193b75514889704113c9
+    name: prometheus
+    type: application
+    urls:
+    - https://github.com/hin22001/helm/releases/download/prometheus-0.1.2/prometheus-0.1.2.tgz
+    version: 0.1.2
+  - apiVersion: v2
+    appVersion: 1.16.0
     created: "2022-09-29T07:36:52.078358884Z"
     dependencies:
     - name: prometheus
